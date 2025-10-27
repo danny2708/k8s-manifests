@@ -15,10 +15,9 @@ spec:
         app: spring-boot-app
     spec:
       containers:
-        - name: spring-boot-container
-          # Thay thế bằng tên image bạn đã build và đẩy lên Docker Registry
-          image: danny078/spring-boot-k8s:latest
-          imagePullPolicy: Never
+        - name: k8s-blog-app
+          image: DOCKER_USERNAME/k8s-blog-app
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           # Cấu hình Health Checks (Quan trọng cho Spring Boot Actuator)
